@@ -1,0 +1,19 @@
+.box {
+    border: 1px solid black;
+    height: 500px;
+    width:  500px;
+    background-color:orange;
+    text-align: center;
+    font-size: 50px;
+     z-index:1001;
+    }
+
+.handle {
+    cursor: move;
+    background-color:pink;
+    border: 1px solid black;
+}
+.ribbon{width:1800px;height:60px;background-color:rgb(50, 134, 199);border:1px solid;float:left;overflow: auto;}
+.item {width:500px;height:900px;background-color:transparent;border:1px solid;float:left;overflow: auto;}
+.workspace{width:1299px;height:900px;background-color:lightsteelblue;border:1px solid;float:left;overflow: auto;}
+.dialogClass{ background: lightpink;}

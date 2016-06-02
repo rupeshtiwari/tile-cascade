@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tile/Cascade Playground</title>
+    <link href="jquery-ui-1.10.0.custom.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="jquery-1.11.2.min.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script src="simpletiles/cells.js"></script>
+    <script src="simpletiles/rows.js"></script>
+    <script src="simpletiles/simpletiles.js"></script>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="ribbon">
+
+        </div>
+        <div class="item">
+
+            <div class="well">
+                <div class="text-muted">
+                    <div class="form-group-sm">
+                        <label class="control-label">Initial Top (Y)</label>
+                        <input id="top" value="60" class="form-control" />
+                    </div>
+
+                    <div class="form-group-sm">
+                        <label class="control-label">Initial Left (X)</label>
+                        <input id="left" value="515" class="form-control" />
+                    </div>
+
+                    <div class="form-group-sm">
+                        <label class="control-label">Workspace Width</label>
+                        <input id="workspacewidth" value="1300" class="form-control" />
+                    </div>
+
+                    <div class="form-group-sm">
+                        <label class="control-label">Workspace Height</label>
+                        <input id="workspaceheight" value="900" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-group-sm">
+                    <label class="control-label">Maximum Columns Per Row</label>
+                    <input id="maxcol" value="2" class="form-control" />
+                </div>
+                <div class="form-group-sm">
+                    <label class="control-label">Cascade Margin</label>
+                    <input id="cascademargin" value="100" class="form-control" />
+                </div>
+
+                <div class="form-group-sm">
+                    <label class="control-label">Number of boxes</label>
+                    <input id="num" value="1" class="form-control" />
+                </div>
+
+                <div class="form-group-sm">
+                    <div>
+                        <label class="control-label">
+                            AutoResize:
+                        </label>
+                        <br />
+
+                    </div>
+                    <input type="radio" name="autoresize" id="autoresize-none" value="none" class="radio-inline" /> <label class="radio-inline" for="autoresize-none">None</label>
+                    <input type="radio" name="autoresize" id="autoresize-colspan" value="colspan" class="radio-inline" /><label class="radio-inline" for="autoresize-colspan">Column Span</label>
+                    <input type="radio" name="autoresize" id="autoresize-rowspan" value="rowspan" class="radio-inline" checked="checked" /><label class="radio-inline" for="autoresize-rowspan" checked="checked">Row Span</label>
+                </div>
+                <div class="form-group-sm">
+                    <br />
+                    <button class="btn btn-lg btn-primary btn-block" id="openall">Open All</button>
+                    <button class="btn btn-lg btn-info btn-block" id="openonebyone">Open One By One</button>
+                </div>
+                <div class="form-group-sm">
+                    <br />
+                    <button class="btn btn-lg btn-block btn-success" id="tile">Tile</button>
+                    <button class="btn btn-lg btn-block btn-success" id="cascade">Cascade</button>
+                    <button class="btn btn-lg btn-block btn-danger " id="closeall">CloseAll</button>
+                </div>
+            </div>
+        </div>
+        <div class="workspace">
+
+        </div>
+    </div>
+
+    <script src="Scripts/TileCascadeIndex.js"></script>
+</body>
+
+</html>

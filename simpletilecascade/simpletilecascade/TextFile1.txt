@@ -1,0 +1,235 @@
+﻿ //it('should return height width for 3 cells', () => {
+            //    var totalCells = 3;
+            //    var cellIndex = 1;
+
+            //    var height = SimpleTile.getCellHeight(options.workspaceHeight, totalCells, cellIndex);
+            //    var width = SimpleTile.getCellWidth(options.workspaceWidth, totalCells, cellIndex);
+
+            //    expect(height).toBe(900);
+            //    expect(width).toBe(433.33);
+
+
+            //    cellIndex = 2;
+            //    height = SimpleTile.getCellHeight(options.workspaceHeight, totalCells, cellIndex);
+            //    width = SimpleTile.getCellWidth(options.workspaceWidth, totalCells, cellIndex);
+
+            //    expect(height).toBe(900);
+            //    expect(width).toBe(433.33);
+
+            //    cellIndex = 3;
+            //    height = SimpleTile.getCellHeight(options.workspaceHeight, totalCells, cellIndex);
+            //    width = SimpleTile.getCellWidth(options.workspaceWidth, totalCells, cellIndex);
+
+            //    expect(height).toBe(900);
+            //    expect(width).toBe(433.33);
+
+            //});
+
+            //it('should return height width for 4 cells', () => {
+            //    var totalCells = 4;
+            //    var cellIndex = 1;
+
+            //    var height = SimpleTile.getCellHeight(options.workspaceHeight, totalCells, cellIndex);
+            //    var width = SimpleTile.getCellWidth(options.workspaceWidth, totalCells, cellIndex);
+
+            //    expect(height).toBe(450);
+            //    expect(width).toBe(650);
+
+            //    cellIndex = 2;
+            //    height = SimpleTile.getCellHeight(options.workspaceHeight, totalCells, cellIndex);
+            //    width = SimpleTile.getCellWidth(options.workspaceWidth, totalCells, cellIndex);
+
+
+            //    expect(height).toBe(450);
+            //    expect(width).toBe(650);
+
+            //    cellIndex = 3;
+            //    height = SimpleTile.getCellHeight(options.workspaceHeight, totalCells, cellIndex);
+            //    width = SimpleTile.getCellWidth(options.workspaceWidth, totalCells, cellIndex);
+
+            //    expect(height).toBe(450);
+            //    expect(width).toBe(650);
+
+            //    cellIndex = 4;
+            //    height = SimpleTile.getCellHeight(options.workspaceHeight, totalCells, cellIndex);
+            //    width = SimpleTile.getCellWidth(options.workspaceWidth, totalCells, cellIndex);
+
+            //    expect(height).toBe(450);
+            //    expect(width).toBe(650);
+
+            //});
+
+            //it('should return height width for 5 cells', () => {
+            //    var totalCells = 5;
+            //    var cellIndex = 1;
+
+            //    var height = SimpleTile.getCellHeight(options.workspaceHeight, totalCells, cellIndex);
+            //    var width = SimpleTile.getCellWidth(options.workspaceWidth, totalCells, cellIndex);
+
+            //    expect(height).toBe(450);
+            //    expect(width).toBe(433.33);
+
+            //    cellIndex = 2;
+            //    height = SimpleTile.getCellHeight(options.workspaceHeight, totalCells, cellIndex);
+            //    width = SimpleTile.getCellWidth(options.workspaceWidth, totalCells, cellIndex);
+
+
+            //    expect(height).toBe(450);
+            //    expect(width).toBe(433.33);
+
+            //    cellIndex = 3;
+            //    height = SimpleTile.getCellHeight(options.workspaceHeight, totalCells, cellIndex);
+            //    width = SimpleTile.getCellWidth(options.workspaceWidth, totalCells, cellIndex);
+
+            //    expect(height).toBe(450);
+            //    expect(width).toBe(433.33);
+
+            //    cellIndex = 4;
+            //    height = SimpleTile.getCellHeight(options.workspaceHeight, totalCells, cellIndex);
+            //    width = SimpleTile.getCellWidth(options.workspaceWidth, totalCells, cellIndex);
+
+            //    expect(height).toBe(450);
+            //    expect(width).toBe(650);
+
+
+            //    cellIndex = 4;
+            //    height = SimpleTile.getCellHeight(options.workspaceHeight, totalCells, cellIndex);
+            //    width = SimpleTile.getCellWidth(options.workspaceWidth, totalCells, cellIndex);
+
+            //    expect(height).toBe(450);
+            //    expect(width).toBe(650);
+
+            //});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       describe("tile capability", () => {
+            var expectedTiledCells = '';
+            beforeEach(() => {
+                options = {
+                    top: 50,
+                    left: 515,
+                    workspaceWidth: 1300,
+                    workspaceHeight: 900,
+                    cascadeMargin: 100
+                };
+
+                simpleTile = new SimpleTile(options);
+            });
+
+            it('should return cells with measurements for tiling 1 window', () => {
+                expectedTiledCells = '{"cells":[{"top":50,"left":515,"index":1,"height":900,"width":1300,"rowPosition":1,"columnPosition":1}]}';
+
+               // expect(JSON.stringify(simpleTile.tile(1))).toEqual(expectedTiledCells);
+            });
+
+            it('should return cells with measurements for tiling 2 windows', () => {
+                expectedTiledCells = "{\"cells\":[{\"top\":50,\"left\":515,\"index\":1,\"height\":900,\"width\":650,\"rowPosition\":1},{\"top\":50,\"left\":1165,\"index\":2,\"height\":900,\"width\":650,\"rowPosition\":1}]}";
+
+                //    expect(JSON.stringify(simpleTile.tile(2))).toEqual(expectedTiledCells);
+            });
+
+            it('should return cells with measurements for tiling 3 windows', () => {
+                expectedTiledCells = '{"cells":[{"top":50,"left":515,"index":1,"height":900,"width":433.33,"rowPosition":1},{"top":50,"left":948.3299999999999,"index":2,"height":900,"width":433.33,"rowPosition":1},{"top":50,"left":1381.6599999999999,"index":3,"height":900,"width":433.33,"rowPosition":1}]}';
+
+                //   expect(JSON.stringify(simpleTile.tile(3))).toEqual(expectedTiledCells);
+            });
+
+            it('should return cells with measurements for tiling 4 windows', () => {
+                expectedTiledCells = "{\"cells\":[{\"top\":50,\"left\":515,\"index\":1,\"height\":450,\"width\":650,\"rowPosition\":1},{\"top\":50,\"left\":1165,\"index\":2,\"height\":450,\"width\":650,\"rowPosition\":1},{\"top\":500,\"left\":515,\"index\":3,\"height\":450,\"width\":650,\"rowPosition\":2},{\"top\":500,\"left\":1165,\"index\":4,\"height\":450,\"width\":650,\"rowPosition\":2}]}";
+
+                //    expect(JSON.stringify(simpleTile.tile(4))).toEqual(expectedTiledCells);
+            });
+
+            it('should return cells with measurements for tiling 5 windows', () => {
+                expectedTiledCells = '{"cells":[{"top":50,"left":515,"index":1,"height":450,"width":433.33,"rowPosition":1},{"top":50,"left":948.3299999999999,"index":2,"height":450,"width":433.33,"rowPosition":1},{"top":50,"left":1381.6599999999999,"index":3,"height":450,"width":433.33,"rowPosition":1},{"top":500,"left":515,"index":4,"height":450,"width":650,"rowPosition":2},{"top":500,"left":1165,"index":5,"height":450,"width":650,"rowPosition":2}]}';
+
+                //  expect(JSON.stringify(simpleTile.tile(5))).toEqual(expectedTiledCells);
+            });
+
+            it('should return cells with measurements for tiling 6 windows', () => {
+                expectedTiledCells = "{\"cells\":[{\"top\":50,\"left\":515,\"index\":1,\"height\":900,\"width\":433.33,\"rowPosition\":1},{\"top\":50,\"left\":948.3299999999999,\"index\":2,\"height\":900,\"width\":433.33,\"rowPosition\":1},{\"top\":50,\"left\":1381.6599999999998,\"index\":3,\"height\":900,\"width\":433.33,\"rowPosition\":1}]}";
+
+                // expect(JSON.stringify(simpleTile.tile(6))).toEqual(expectedTiledCells);
+            });
+
+            it('should return cells with measurements for tiling 7 windows', () => {
+                expectedTiledCells = "{\"cells\":[{\"top\":50,\"left\":515,\"index\":1,\"height\":900,\"width\":433.33,\"rowPosition\":1},{\"top\":50,\"left\":948.3299999999999,\"index\":2,\"height\":900,\"width\":433.33,\"rowPosition\":1},{\"top\":50,\"left\":1381.6599999999998,\"index\":3,\"height\":900,\"width\":433.33,\"rowPosition\":1}]}";
+
+                // expect(JSON.stringify(simpleTile.tile(7))).toEqual(expectedTiledCells);
+            });
+
+            it('should return cells with measurements for tiling 8 windows', () => {
+                expectedTiledCells = "{\"cells\":[{\"top\":50,\"left\":515,\"index\":1,\"height\":900,\"width\":433.33,\"rowPosition\":1},{\"top\":50,\"left\":948.3299999999999,\"index\":2,\"height\":900,\"width\":433.33,\"rowPosition\":1},{\"top\":50,\"left\":1381.6599999999998,\"index\":3,\"height\":900,\"width\":433.33,\"rowPosition\":1}]}";
+
+                //  expect(JSON.stringify(simpleTile.tile(8))).toEqual(expectedTiledCells);
+            });
+
+        });
+
+        describe("cascade capability", () => {
+            var expectedCascadedCells = '';
+            beforeEach(() => {
+                options = {
+                    top: 50,
+                    left: 515,
+                    workspaceWidth: 1300,
+                    workspaceHeight: 900,
+                    cascadeMargin: 100
+                };
+                simpleTile = new SimpleTile(options);
+            });
+
+            it("should return cells with mesurements for cascading 2 windows", () => {
+                expectedCascadedCells = '{"cells":[{"top":50,"left":515,"index":1,"height":null,"width":null,"rowPosition":null},{"top":150,"left":615,"index":2,"height":null,"width":null,"rowPosition":null}]}';
+                //  expect(JSON.stringify(simpleTile.cascade(2))).toBe(expectedCascadedCells);
+            });
+
+            it("should return cells with mesurements for cascading 3 windows", () => {
+                expectedCascadedCells = '{"cells":[{"top":50,"left":515,"index":1,"height":null,"width":null,"rowPosition":null},{"top":150,"left":615,"index":2,"height":null,"width":null,"rowPosition":null},{"top":250,"left":715,"index":3,"height":null,"width":null,"rowPosition":null}]}';
+
+                //  expect(JSON.stringify(simpleTile.cascade(3))).toEqual(expectedCascadedCells);
+            });
+
+            it("should return cells with mesurements for cascading 4 windows", () => {
+                expectedCascadedCells = '{"cells":[{"top":50,"left":515,"index":1,"height":null,"width":null,"rowPosition":null},{"top":150,"left":615,"index":2,"height":null,"width":null,"rowPosition":null},{"top":250,"left":715,"index":3,"height":null,"width":null,"rowPosition":null},{"top":350,"left":815,"index":4,"height":null,"width":null,"rowPosition":null}]}';
+
+                //   expect(JSON.stringify(simpleTile.cascade(4))).toEqual(expectedCascadedCells);
+            });
+
+            it("should return cells with mesurements for cascading 5 windows", () => {
+                expectedCascadedCells = '{"cells":[{"top":50,"left":515,"index":1,"height":null,"width":null,"rowPosition":null},{"top":150,"left":615,"index":2,"height":null,"width":null,"rowPosition":null},{"top":250,"left":715,"index":3,"height":null,"width":null,"rowPosition":null},{"top":350,"left":815,"index":4,"height":null,"width":null,"rowPosition":null},{"top":450,"left":915,"index":5,"height":null,"width":null,"rowPosition":null}]}';
+
+                //   expect(JSON.stringify(simpleTile.cascade(5))).toEqual(expectedCascadedCells);
+            });
+
+            it("should return cells with mesurements for cascading 6 windows", () => {
+                expectedCascadedCells = "{\"cells\":[{\"top\":50,\"left\":515,\"index\":1,\"height\":null,\"width\":null},{\"top\":150,\"left\":615,\"index\":2},{\"top\":250,\"left\":715,\"index\":3},{\"top\":350,\"left\":815,\"index\":4}]}";
+                //  expect(JSON.stringify(simpleTile.cascade(6))).toEqual(expectedCascadedCells);
+            });
+
+            it("should return cells with mesurements for cascading 7 windows", () => {
+                expectedCascadedCells = "{\"cells\":[{\"top\":50,\"left\":515,\"index\":1,\"height\":null,\"width\":null},{\"top\":150,\"left\":615,\"index\":2},{\"top\":250,\"left\":715,\"index\":3},{\"top\":350,\"left\":815,\"index\":4}]}";
+                //   expect(JSON.stringify(simpleTile.cascade(7))).toEqual(expectedCascadedCells);
+            });
+
+            it("should return cells with mesurements for cascading 8 windows", () => {
+                expectedCascadedCells = "{\"cells\":[{\"top\":50,\"left\":515,\"index\":1,\"height\":null,\"width\":null},{\"top\":150,\"left\":615,\"index\":2},{\"top\":250,\"left\":715,\"index\":3},{\"top\":350,\"left\":815,\"index\":4}]}";
+                //  expect(JSON.stringify(simpleTile.cascade(8))).toEqual(expectedCascadedCells);
+            });
+
+        });
